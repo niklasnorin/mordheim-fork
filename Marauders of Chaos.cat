@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue id="6f31-2d7a-a9c4-1e85" name="Marauders of Chaos (1c)" revision="1" battleScribeVersion="2.03" library="false" gameSystemId="9481a749-7900-614b-1695-bdc2899069c1" gameSystemRevision="16" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <publications>
+    <publication id="moc-pub-1c" name="Marauders of Chaos" shortName="Marauders" publisher="The New Mordheimer" publisherUrl="https://mordheimer.net/docs/warbands/grade-1c-warbands/marauders-of-chaos"/>
+  </publications>
+  <categoryEntries>
+    <categoryEntry id="moc-warband-members" name="Warband Members" hidden="true">
+      <modifiers>
+        <modifier type="set" field="moc-members-max" value="12"><conditions><condition type="atLeast" value="1" field="selections" scope="roster" childId="moc-hung" shared="true" includeChildSelections="true"/></conditions></modifier>
+      </modifiers>
+      <constraints>
+        <constraint type="min" value="3" field="selections" scope="roster" shared="true" includeChildSelections="true" id="moc-members-min"/>
+        <constraint type="max" value="15" field="selections" scope="roster" shared="true" includeChildSelections="true" id="moc-members-max"/>
+      </constraints>
+    </categoryEntry>
+  </categoryEntries>
+  <selectionEntries>
+    <selectionEntry id="moc-config" name="Marauders of Chaos Roster" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="moc-config-min"/>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="moc-config-max"/>
+      </constraints>
+      <rules>
+        <rule id="moc-roster-limits" name="Roster limits" hidden="false"><description>A warband starts with 500 gold crowns, must include at least 3 models, and may include no more than 15 models (12 for the Hung).</description></rule>
+        <rule id="moc-eye" name="Eye of the Gods" hidden="false"><description>Roll 2D6 after every battle in which the leader took part. After a loss, add +1 for each Hero taken out of action; on 12+ the leader becomes a Spawn of Chaos and loses all experience, skills, injuries and equipment. If the warband already has a Spawn, erase the leader instead. After a win, add +1 for each enemy the leader took out of action; on 12+ choose a Mark of the Dark Gods for the leader. Stop testing once the leader receives a Mark; a replacement leader must prove himself anew. A warband may never include more than one Spawn.</description></rule>
+        <rule id="moc-hired" name="Hired Swords" hidden="false"><description>Marauders of Chaos may hire Pit Fighters, Ogres, Norse Shamans and Imperial Assassins, plus Hired Swords that specifically permit Marauders. They may hire Witches and Warlocks unless the warband includes a warrior with the Mark of Arkhar.</description></rule>
+      </rules>
+      <categoryLinks>
+        <categoryLink id="moc-config-cat" name="Configuration" hidden="false" targetId="4852-c4cb-82b0-b7fa" primary="true"/>
+      </categoryLinks>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="moc-tribes" name="Tribe" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="moc-tribe-min"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-tribe-max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="moc-norse" name="The Norse" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-norse-max"/></constraints>
+              <rules>
+                <rule id="moc-reavers" name="Reavers" hidden="false"><description>The Norse gain +1 to rarity rolls when searching during the post-game sequence.</description></rule>
+                <rule id="moc-pantheon" name="Pantheon" hidden="false"><description>For a Norse warband, the Eye of the Gods transforms the leader into a Spawn or awards a Mark only on a result of 13+ instead of 12+.</description></rule>
+              </rules>
+            </selectionEntry>
+            <selectionEntry id="moc-kurgan" name="The Kurgan" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-kurgan-max"/></constraints>
+              <rules><rule id="moc-pedigree" name="Pedigree" hidden="false"><description>A Kurgan warband may include any number of Warhounds of Chaos instead of the usual maximum of five.</description></rule></rules>
+            </selectionEntry>
+            <selectionEntry id="moc-hung" name="The Hung" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-hung-max"/></constraints>
+              <rules>
+                <rule id="moc-disloyalty" name="Disloyalty" hidden="false"><description>The maximum number of warriors in a Hung warband is 12 instead of 15.</description></rule>
+                <rule id="moc-horses" name="Affinity with Horses" hidden="false"><description>Warhorses always cost 40 gold crowns. All Heroes, including promoted Henchmen, automatically have the Ride Warhorse skill. In Border Town Burning the number of mounts is unrestricted.</description></rule>
+              </rules>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+    </selectionEntry>
+
+    <selectionEntry id="moc-chieftain" name="Marauder Chieftain" hidden="false" collective="false" import="true" type="model">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="roster" shared="true" id="moc-chief-min"/>
+        <constraint type="max" value="1" field="selections" scope="roster" shared="true" id="moc-chief-max"/>
+      </constraints>
+      <profiles><profile id="moc-chief-profile" name="Marauder Chieftain" hidden="false" typeId="e1beaa44-e54d-dd6b-d1f2-446b333c9bb9" typeName="Model"><characteristics>
+        <characteristic name="M" typeId="2a0bcc4c-8266-418f-13d6-a6b44def5e92">4</characteristic><characteristic name="WS" typeId="d5aca8ba-0204-b324-b976-c2b536e09924">5</characteristic><characteristic name="BS" typeId="5b4d181b-23ae-5ed7-9262-c1d2f79246a8">3</characteristic><characteristic name="S" typeId="7f1f0a4d-68dc-b0df-5703-c4d0d91a93b9">4</characteristic><characteristic name="T" typeId="54f4796b-dedb-c296-8b1a-ff7f8043293a">4</characteristic><characteristic name="W" typeId="3172c8dc-ebe4-0c40-72ab-8fd0076b9442">1</characteristic><characteristic name="I" typeId="a6fd52b0-be0a-655e-6314-87b392c9c90e">5</characteristic><characteristic name="A" typeId="bf393c37-9d10-fc85-c147-62b1c01a89fe">1</characteristic><characteristic name="LD" typeId="e234eaea-a02a-2fb7-3e1f-605392aabb89">8</characteristic>
+      </characteristics></profile></profiles>
+      <rules><rule id="moc-leader" name="Leader" hidden="false"><description>Any warrior within 6&quot; of the Marauder Chieftain may use his Leadership instead of his own when taking Leadership tests.</description></rule></rules>
+      <categoryLinks><categoryLink id="moc-chief-cat" name="Heroes" hidden="false" targetId="a0fce0bc-02e0-a064-7a39-5b97ff8a9c94" primary="true"/><categoryLink id="moc-chief-member" name="Warband Members" hidden="false" targetId="moc-warband-members" primary="false"/></categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="moc-chief-equip" name="Hero Equipment List" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-chief-equip-max"/></constraints><entryLinks><entryLink id="moc-chief-equip-link" name="Hero Equipment List" hidden="false" collective="false" import="true" targetId="moc-hero-equipment" type="selectionEntryGroup"/></entryLinks></selectionEntry>
+      </selectionEntries>
+      <entryLinks>
+        <entryLink id="moc-chief-exp" name="Experience" hidden="false" collective="false" import="true" targetId="d769-0d85-e810-df60" type="selectionEntry"><constraints><constraint type="min" value="20" field="selections" scope="parent" shared="true" id="moc-chief-exp-min"/></constraints></entryLink>
+        <entryLink id="moc-chief-combat" name="Combat Skills" hidden="false" collective="false" import="true" targetId="ee2c-89e3-489b-d0cb" type="selectionEntryGroup"/>
+        <entryLink id="moc-chief-strength" name="Strength Skills" hidden="false" collective="false" import="true" targetId="e5ac-cd5b-9057-e096" type="selectionEntryGroup"/>
+        <entryLink id="moc-chief-speed" name="Speed Skills" hidden="false" collective="false" import="true" targetId="e134-0fdf-67a2-4684" type="selectionEntryGroup"/>
+        <entryLink id="moc-chief-special" name="Marauder Special Skills" hidden="false" collective="false" import="true" targetId="moc-special-skills" type="selectionEntryGroup"/>
+        <entryLink id="moc-chief-marks" name="Marks of the Dark Gods" hidden="false" collective="false" import="true" targetId="moc-marks" type="selectionEntryGroup"/>
+      </entryLinks>
+      <costs><cost name=" gc" typeId="points" value="95"/><cost name=" Warband Rating" typeId="wb-rating" value="5"/></costs>
+    </selectionEntry>
+
+    <selectionEntry id="moc-seer" name="Seer" hidden="false" collective="false" import="true" type="model">
+      <constraints><constraint type="max" value="1" field="selections" scope="roster" shared="true" id="moc-seer-max"/></constraints>
+      <profiles><profile id="moc-seer-profile" name="Seer" hidden="false" typeId="e1beaa44-e54d-dd6b-d1f2-446b333c9bb9" typeName="Model"><characteristics>
+        <characteristic name="M" typeId="2a0bcc4c-8266-418f-13d6-a6b44def5e92">4</characteristic><characteristic name="WS" typeId="d5aca8ba-0204-b324-b976-c2b536e09924">4</characteristic><characteristic name="BS" typeId="5b4d181b-23ae-5ed7-9262-c1d2f79246a8">3</characteristic><characteristic name="S" typeId="7f1f0a4d-68dc-b0df-5703-c4d0d91a93b9">3</characteristic><characteristic name="T" typeId="54f4796b-dedb-c296-8b1a-ff7f8043293a">3</characteristic><characteristic name="W" typeId="3172c8dc-ebe4-0c40-72ab-8fd0076b9442">1</characteristic><characteristic name="I" typeId="a6fd52b0-be0a-655e-6314-87b392c9c90e">4</characteristic><characteristic name="A" typeId="bf393c37-9d10-fc85-c147-62b1c01a89fe">1</characteristic><characteristic name="LD" typeId="e234eaea-a02a-2fb7-3e1f-605392aabb89">8</characteristic>
+      </characteristics></profile></profiles>
+      <rules><rule id="moc-wizard" name="Wizard" hidden="false"><description>A Seer is a Wizard. His required Mark determines whether he uses Chaos, Tchar, Onogal or Shornaal Rituals, or becomes an Arkhar Bloodfather.</description></rule></rules>
+      <categoryLinks><categoryLink id="moc-seer-cat" name="Heroes" hidden="false" targetId="a0fce0bc-02e0-a064-7a39-5b97ff8a9c94" primary="true"/><categoryLink id="moc-seer-member" name="Warband Members" hidden="false" targetId="moc-warband-members" primary="false"/></categoryLinks>
+      <selectionEntries><selectionEntry id="moc-seer-equip" name="Hero Equipment List" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-seer-equip-max"/></constraints><entryLinks><entryLink id="moc-seer-equip-link" name="Hero Equipment List" hidden="false" collective="false" import="true" targetId="moc-hero-equipment" type="selectionEntryGroup"/></entryLinks></selectionEntry></selectionEntries>
+      <entryLinks>
+        <entryLink id="moc-seer-exp" name="Experience" hidden="false" collective="false" import="true" targetId="d769-0d85-e810-df60" type="selectionEntry"><constraints><constraint type="min" value="8" field="selections" scope="parent" shared="true" id="moc-seer-exp-min"/></constraints></entryLink>
+        <entryLink id="moc-seer-combat" name="Combat Skills" hidden="false" collective="false" import="true" targetId="ee2c-89e3-489b-d0cb" type="selectionEntryGroup"/>
+        <entryLink id="moc-seer-academic" name="Academic Skills" hidden="false" collective="false" import="true" targetId="df9d-8724-d362-9d7c" type="selectionEntryGroup"/>
+        <entryLink id="moc-seer-special" name="Marauder Special Skills" hidden="false" collective="false" import="true" targetId="moc-special-skills" type="selectionEntryGroup"/>
+        <entryLink id="moc-seer-marks" name="Mark of Chaos (choose one)" hidden="false" collective="false" import="true" targetId="moc-marks" type="selectionEntryGroup"><constraints><constraint type="min" value="1" field="selections" scope="parent" shared="true" id="moc-seer-mark-min"/><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-seer-mark-max"/></constraints></entryLink>
+      </entryLinks>
+      <costs><cost name=" gc" typeId="points" value="45"/><cost name=" Warband Rating" typeId="wb-rating" value="5"/></costs>
+    </selectionEntry>
+
+    <selectionEntry id="moc-champion" name="Champion" hidden="false" collective="false" import="true" type="model">
+      <constraints><constraint type="max" value="2" field="selections" scope="roster" shared="true" id="moc-champ-max"/></constraints>
+      <profiles><profile id="moc-champ-profile" name="Champion" hidden="false" typeId="e1beaa44-e54d-dd6b-d1f2-446b333c9bb9" typeName="Model"><characteristics>
+        <characteristic name="M" typeId="2a0bcc4c-8266-418f-13d6-a6b44def5e92">4</characteristic><characteristic name="WS" typeId="d5aca8ba-0204-b324-b976-c2b536e09924">4</characteristic><characteristic name="BS" typeId="5b4d181b-23ae-5ed7-9262-c1d2f79246a8">3</characteristic><characteristic name="S" typeId="7f1f0a4d-68dc-b0df-5703-c4d0d91a93b9">4</characteristic><characteristic name="T" typeId="54f4796b-dedb-c296-8b1a-ff7f8043293a">3</characteristic><characteristic name="W" typeId="3172c8dc-ebe4-0c40-72ab-8fd0076b9442">1</characteristic><characteristic name="I" typeId="a6fd52b0-be0a-655e-6314-87b392c9c90e">4</characteristic><characteristic name="A" typeId="bf393c37-9d10-fc85-c147-62b1c01a89fe">1</characteristic><characteristic name="LD" typeId="e234eaea-a02a-2fb7-3e1f-605392aabb89">7</characteristic>
+      </characteristics></profile></profiles>
+      <categoryLinks><categoryLink id="moc-champ-cat" name="Heroes" hidden="false" targetId="a0fce0bc-02e0-a064-7a39-5b97ff8a9c94" primary="true"/><categoryLink id="moc-champ-member" name="Warband Members" hidden="false" targetId="moc-warband-members" primary="false"/></categoryLinks>
+      <selectionEntries><selectionEntry id="moc-champ-equip" name="Hero Equipment List" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-champ-equip-max"/></constraints><entryLinks><entryLink id="moc-champ-equip-link" name="Hero Equipment List" hidden="false" collective="false" import="true" targetId="moc-hero-equipment" type="selectionEntryGroup"/></entryLinks></selectionEntry></selectionEntries>
+      <entryLinks>
+        <entryLink id="moc-champ-exp" name="Experience" hidden="false" collective="false" import="true" targetId="d769-0d85-e810-df60" type="selectionEntry"><constraints><constraint type="min" value="8" field="selections" scope="parent" shared="true" id="moc-champ-exp-min"/></constraints></entryLink>
+        <entryLink id="moc-champ-combat" name="Combat Skills" hidden="false" collective="false" import="true" targetId="ee2c-89e3-489b-d0cb" type="selectionEntryGroup"/>
+        <entryLink id="moc-champ-strength" name="Strength Skills" hidden="false" collective="false" import="true" targetId="e5ac-cd5b-9057-e096" type="selectionEntryGroup"/>
+        <entryLink id="moc-champ-special" name="Marauder Special Skills" hidden="false" collective="false" import="true" targetId="moc-special-skills" type="selectionEntryGroup"/>
+        <entryLink id="moc-champ-marks" name="Marks of the Dark Gods" hidden="false" collective="false" import="true" targetId="moc-marks" type="selectionEntryGroup"/>
+      </entryLinks>
+      <costs><cost name=" gc" typeId="points" value="45"/><cost name=" Warband Rating" typeId="wb-rating" value="5"/></costs>
+    </selectionEntry>
+
+    <selectionEntry id="moc-condemned" name="Condemned" hidden="false" collective="false" import="true" type="model">
+      <constraints><constraint type="max" value="1" field="selections" scope="roster" shared="true" id="moc-condemned-max"/></constraints>
+      <profiles><profile id="moc-condemned-profile" name="Condemned" hidden="false" typeId="e1beaa44-e54d-dd6b-d1f2-446b333c9bb9" typeName="Model"><characteristics>
+        <characteristic name="M" typeId="2a0bcc4c-8266-418f-13d6-a6b44def5e92">4</characteristic><characteristic name="WS" typeId="d5aca8ba-0204-b324-b976-c2b536e09924">D6</characteristic><characteristic name="BS" typeId="5b4d181b-23ae-5ed7-9262-c1d2f79246a8">3</characteristic><characteristic name="S" typeId="7f1f0a4d-68dc-b0df-5703-c4d0d91a93b9">D6</characteristic><characteristic name="T" typeId="54f4796b-dedb-c296-8b1a-ff7f8043293a">D6</characteristic><characteristic name="W" typeId="3172c8dc-ebe4-0c40-72ab-8fd0076b9442">1</characteristic><characteristic name="I" typeId="a6fd52b0-be0a-655e-6314-87b392c9c90e">4</characteristic><characteristic name="A" typeId="bf393c37-9d10-fc85-c147-62b1c01a89fe">D3</characteristic><characteristic name="LD" typeId="e234eaea-a02a-2fb7-3e1f-605392aabb89">7</characteristic>
+      </characteristics></profile></profiles>
+      <rules>
+        <rule id="moc-inconsistency" name="Inconsistency" hidden="false"><description>Determine the variable WS, S, T and A whenever needed, once every turn.</description></rule>
+        <rule id="moc-condemned-fear" name="Fear" hidden="false"><description>The Condemned causes fear.</description></rule>
+        <rule id="moc-condemned-experience" name="Experience" hidden="false"><description>When a variable characteristic would increase, roll its die instead. The player may permanently set the characteristic to that result or leave it variable and lose the advance. The Marauder maximum may be exceeded.</description></rule>
+        <rule id="moc-fate" name="Fate" hidden="false"><description>The Condemned uses no equipment and fights without penalty. Once all variable characteristics are fixed, he may use equipment normally. If he reaches 90 Experience with any variable characteristic, he becomes a Spawn of Chaos; if the warband already has one, remove him from the roster.</description></rule>
+      </rules>
+      <categoryLinks><categoryLink id="moc-condemned-cat" name="Heroes" hidden="false" targetId="a0fce0bc-02e0-a064-7a39-5b97ff8a9c94" primary="true"/><categoryLink id="moc-condemned-member" name="Warband Members" hidden="false" targetId="moc-warband-members" primary="false"/></categoryLinks>
+      <entryLinks>
+        <entryLink id="moc-condemned-exp" name="Experience" hidden="false" collective="false" import="true" targetId="d769-0d85-e810-df60" type="selectionEntry"><constraints><constraint type="min" value="8" field="selections" scope="parent" shared="true" id="moc-condemned-exp-min"/></constraints></entryLink>
+        <entryLink id="moc-condemned-combat" name="Combat Skills" hidden="false" collective="false" import="true" targetId="ee2c-89e3-489b-d0cb" type="selectionEntryGroup"/>
+        <entryLink id="moc-condemned-strength" name="Strength Skills" hidden="false" collective="false" import="true" targetId="e5ac-cd5b-9057-e096" type="selectionEntryGroup"/>
+        <entryLink id="moc-condemned-speed" name="Speed Skills" hidden="false" collective="false" import="true" targetId="e134-0fdf-67a2-4684" type="selectionEntryGroup"/>
+        <entryLink id="moc-condemned-special" name="Marauder Special Skills" hidden="false" collective="false" import="true" targetId="moc-special-skills" type="selectionEntryGroup"/>
+      </entryLinks>
+      <costs><cost name=" gc" typeId="points" value="55"/><cost name=" Warband Rating" typeId="wb-rating" value="5"/></costs>
+    </selectionEntry>
+
+    <selectionEntry id="moc-marauder" name="Chaos Marauders" hidden="false" collective="true" import="true" type="model">
+      <profiles><profile id="moc-marauder-profile" name="Chaos Marauder" hidden="false" typeId="e1beaa44-e54d-dd6b-d1f2-446b333c9bb9" typeName="Model"><characteristics>
+        <characteristic name="M" typeId="2a0bcc4c-8266-418f-13d6-a6b44def5e92">4</characteristic><characteristic name="WS" typeId="d5aca8ba-0204-b324-b976-c2b536e09924">4</characteristic><characteristic name="BS" typeId="5b4d181b-23ae-5ed7-9262-c1d2f79246a8">3</characteristic><characteristic name="S" typeId="7f1f0a4d-68dc-b0df-5703-c4d0d91a93b9">3</characteristic><characteristic name="T" typeId="54f4796b-dedb-c296-8b1a-ff7f8043293a">3</characteristic><characteristic name="W" typeId="3172c8dc-ebe4-0c40-72ab-8fd0076b9442">1</characteristic><characteristic name="I" typeId="a6fd52b0-be0a-655e-6314-87b392c9c90e">4</characteristic><characteristic name="A" typeId="bf393c37-9d10-fc85-c147-62b1c01a89fe">1</characteristic><characteristic name="LD" typeId="e234eaea-a02a-2fb7-3e1f-605392aabb89">7</characteristic>
+      </characteristics></profile></profiles>
+      <categoryLinks><categoryLink id="moc-marauder-cat" name="Henchmen" hidden="false" targetId="f9b08d8e-4922-78d5-78ad-2047bff52dc8" primary="true"/><categoryLink id="moc-marauder-member" name="Warband Members" hidden="false" targetId="moc-warband-members" primary="false"/></categoryLinks>
+      <selectionEntries><selectionEntry id="moc-marauder-equip" name="Henchmen Equipment List" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-marauder-equip-max"/></constraints><entryLinks><entryLink id="moc-marauder-equip-link" name="Henchmen Equipment List" hidden="false" collective="false" import="true" targetId="moc-hench-equipment" type="selectionEntryGroup"/></entryLinks></selectionEntry></selectionEntries>
+      <entryLinks><entryLink id="moc-marauder-exp" name="Experience" hidden="false" collective="false" import="true" targetId="d769-0d85-e810-df60" type="selectionEntry"/></entryLinks>
+      <costs><cost name=" gc" typeId="points" value="35"/><cost name=" Warband Rating" typeId="wb-rating" value="5"/></costs>
+    </selectionEntry>
+
+    <selectionEntry id="moc-warhound" name="Warhounds of Chaos" hidden="false" collective="true" import="true" type="model">
+      <modifiers><modifier type="set" field="moc-warhound-max" value="-1"><conditions><condition type="atLeast" value="1" field="selections" scope="roster" childId="moc-kurgan" shared="true" includeChildSelections="true"/></conditions></modifier></modifiers>
+      <constraints><constraint type="max" value="5" field="selections" scope="roster" shared="true" id="moc-warhound-max"/></constraints>
+      <profiles><profile id="moc-warhound-profile" name="Warhound of Chaos" hidden="false" typeId="e1beaa44-e54d-dd6b-d1f2-446b333c9bb9" typeName="Model"><characteristics>
+        <characteristic name="M" typeId="2a0bcc4c-8266-418f-13d6-a6b44def5e92">7</characteristic><characteristic name="WS" typeId="d5aca8ba-0204-b324-b976-c2b536e09924">4</characteristic><characteristic name="BS" typeId="5b4d181b-23ae-5ed7-9262-c1d2f79246a8">0</characteristic><characteristic name="S" typeId="7f1f0a4d-68dc-b0df-5703-c4d0d91a93b9">4</characteristic><characteristic name="T" typeId="54f4796b-dedb-c296-8b1a-ff7f8043293a">3</characteristic><characteristic name="W" typeId="3172c8dc-ebe4-0c40-72ab-8fd0076b9442">1</characteristic><characteristic name="I" typeId="a6fd52b0-be0a-655e-6314-87b392c9c90e">3</characteristic><characteristic name="A" typeId="bf393c37-9d10-fc85-c147-62b1c01a89fe">1</characteristic><characteristic name="LD" typeId="e234eaea-a02a-2fb7-3e1f-605392aabb89">5</characteristic>
+      </characteristics></profile></profiles>
+      <rules><rule id="moc-animals" name="Animals" hidden="false"><description>Warhounds use no equipment, fight without penalty, and never gain experience.</description></rule></rules>
+      <categoryLinks><categoryLink id="moc-warhound-cat" name="Henchmen" hidden="false" targetId="f9b08d8e-4922-78d5-78ad-2047bff52dc8" primary="true"/><categoryLink id="moc-warhound-member" name="Warband Members" hidden="false" targetId="moc-warband-members" primary="false"/></categoryLinks>
+      <costs><cost name=" gc" typeId="points" value="15"/><cost name=" Warband Rating" typeId="wb-rating" value="5"/></costs>
+    </selectionEntry>
+
+    <selectionEntry id="moc-spawn" name="Spawn of Chaos" hidden="false" collective="false" import="true" type="model">
+      <constraints><constraint type="max" value="1" field="selections" scope="roster" shared="true" id="moc-spawn-max"/></constraints>
+      <profiles><profile id="moc-spawn-profile" name="Spawn of Chaos" hidden="false" typeId="e1beaa44-e54d-dd6b-d1f2-446b333c9bb9" typeName="Model"><characteristics>
+        <characteristic name="M" typeId="2a0bcc4c-8266-418f-13d6-a6b44def5e92">2D6</characteristic><characteristic name="WS" typeId="d5aca8ba-0204-b324-b976-c2b536e09924">3</characteristic><characteristic name="BS" typeId="5b4d181b-23ae-5ed7-9262-c1d2f79246a8">0</characteristic><characteristic name="S" typeId="7f1f0a4d-68dc-b0df-5703-c4d0d91a93b9">4</characteristic><characteristic name="T" typeId="54f4796b-dedb-c296-8b1a-ff7f8043293a">5</characteristic><characteristic name="W" typeId="3172c8dc-ebe4-0c40-72ab-8fd0076b9442">3</characteristic><characteristic name="I" typeId="a6fd52b0-be0a-655e-6314-87b392c9c90e">2</characteristic><characteristic name="A" typeId="bf393c37-9d10-fc85-c147-62b1c01a89fe">D6</characteristic><characteristic name="LD" typeId="e234eaea-a02a-2fb7-3e1f-605392aabb89">10</characteristic>
+      </characteristics></profile></profiles>
+      <rules>
+        <rule id="moc-special-attacks" name="Special Attacks" hidden="false"><description>Roll at the beginning of each Close Combat phase to determine the Spawn&apos;s Attacks for that phase.</description></rule>
+        <rule id="moc-spawn-fear" name="Fear" hidden="false"><description>The Spawn causes fear.</description></rule>
+        <rule id="moc-special-movement" name="Special Movement" hidden="false"><description>In each Movement phase, turn the Spawn to face a direction, then move it 2D6&quot; straight ahead. It does not double movement when charging; if it contacts a model it counts as charging and engages it.</description></rule>
+        <rule id="moc-psychology" name="Psychology" hidden="false"><description>The Spawn automatically passes every Leadership-based test it is required to make.</description></rule>
+        <rule id="moc-no-brain" name="No Brain" hidden="false"><description>The Spawn uses no equipment, fights without penalty, and gains no experience.</description></rule>
+        <rule id="moc-large" name="Large" hidden="false"><description>The Spawn counts as a Large Target under the shooting rules.</description></rule>
+      </rules>
+      <categoryLinks><categoryLink id="moc-spawn-cat" name="Henchmen" hidden="false" targetId="f9b08d8e-4922-78d5-78ad-2047bff52dc8" primary="true"/><categoryLink id="moc-spawn-member" name="Warband Members" hidden="false" targetId="moc-warband-members" primary="false"/></categoryLinks>
+      <costs><cost name=" gc" typeId="points" value="180"/><cost name=" Warband Rating" typeId="wb-rating" value="20"/></costs>
+    </selectionEntry>
+  </selectionEntries>
+
+  <sharedSelectionEntries>
+    <selectionEntry id="moc-great-axe" name="Great Axe" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-great-axe-max"/></constraints>
+      <profiles><profile id="moc-great-axe-profile" name="Great Axe" hidden="false" typeId="9db87680-6ee5-b46c-48ca-dcd1c5de1bad" typeName="H-t-h Weapon"><characteristics><characteristic name="Str" typeId="f10cfcb7-b71e-4c27-9836-75d341e28f68">User +2</characteristic><characteristic name="Special" typeId="80dd3fd5-3811-af0b-e182-2ecbc7ad5d8e">Two-handed, strikes last; Marauders of Chaos Heroes with Chosen of Chaos only.</characteristic></characteristics></profile></profiles>
+      <costs><cost name=" gc" typeId="points" value="25"/><cost name=" Warband Rating" typeId="wb-rating" value="0"/></costs>
+    </selectionEntry>
+    <selectionEntry id="moc-barbed-whip" name="Barbed Whip" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints><constraint type="max" value="1" field="selections" scope="roster" shared="true" id="moc-whip-max"/></constraints>
+      <profiles><profile id="moc-whip-profile" name="Barbed Whip" hidden="false" typeId="9db87680-6ee5-b46c-48ca-dcd1c5de1bad" typeName="H-t-h Weapon"><characteristics><characteristic name="Str" typeId="f10cfcb7-b71e-4c27-9836-75d341e28f68">User</characteristic><characteristic name="Special" typeId="80dd3fd5-3811-af0b-e182-2ecbc7ad5d8e">Whipcrack: +1 Attack when charging.</characteristic></characteristics></profile></profiles>
+      <costs><cost name=" gc" typeId="points" value="15"/><cost name=" Warband Rating" typeId="wb-rating" value="0"/></costs>
+    </selectionEntry>
+  </sharedSelectionEntries>
+
+  <sharedSelectionEntryGroups>
+    <selectionEntryGroup id="moc-hero-equipment" name="Hero Equipment List" hidden="false" collective="false" import="true">
+      <entryLinks>
+        <entryLink id="moc-he-free-dagger" name="Free Dagger" hidden="false" collective="false" import="true" targetId="0d0b-ed37-d8b0-4cbf" type="selectionEntry"/>
+        <entryLink id="moc-he-dagger" name="Dagger" hidden="false" collective="false" import="true" targetId="64e0-0bb6-542b-4beb" type="selectionEntry"/>
+        <entryLink id="moc-he-hammer" name="Hammer" hidden="false" collective="false" import="true" targetId="cfcc-39fd-aeb4-876a" type="selectionEntry"/>
+        <entryLink id="moc-he-axe" name="Axe" hidden="false" collective="false" import="true" targetId="5d01-06b9-3a86-73c9" type="selectionEntry"/>
+        <entryLink id="moc-he-sword" name="Sword" hidden="false" collective="false" import="true" targetId="34fd-d6a3-50ee-ee06" type="selectionEntry"/>
+        <entryLink id="moc-he-halberd" name="Halberd" hidden="false" collective="false" import="true" targetId="3c52-9e92-25ec-1939" type="selectionEntry"/>
+        <entryLink id="moc-he-morning" name="Morning Star" hidden="false" collective="false" import="true" targetId="d5f3-1906-da91-4e8f" type="selectionEntry"/>
+        <entryLink id="moc-he-great" name="Great Weapon" hidden="false" collective="false" import="true" targetId="a0a1-b311-e3aa-6c3b" type="selectionEntry"/>
+        <entryLink id="moc-he-flail" name="Flail" hidden="false" collective="false" import="true" targetId="fea6-684b-02c4-6c62" type="selectionEntry"/>
+        <entryLink id="moc-he-whip" name="Barbed Whip" hidden="false" collective="false" import="true" targetId="moc-barbed-whip" type="selectionEntry"/>
+        <entryLink id="moc-he-great-axe" name="Great Axe" hidden="false" collective="false" import="true" targetId="moc-great-axe" type="selectionEntry"/>
+        <entryLink id="moc-he-shield" name="Shield" hidden="false" collective="false" import="true" targetId="74fb-cc90-1361-df26" type="selectionEntry"/>
+        <entryLink id="moc-he-helmet" name="Helmet" hidden="false" collective="false" import="true" targetId="d0e5-ca89-5f0d-f5d2" type="selectionEntry"/>
+        <entryLink id="moc-he-light" name="Light Armour" hidden="false" collective="false" import="true" targetId="3d2a-426a-c350-2a03" type="selectionEntry"/>
+        <entryLink id="moc-he-heavy" name="Heavy Armour" hidden="false" collective="false" import="true" targetId="4e34-bbc5-c7ef-6bd6" type="selectionEntry"/>
+      </entryLinks>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="moc-hench-equipment" name="Henchmen Equipment List" hidden="false" collective="false" import="true">
+      <entryLinks>
+        <entryLink id="moc-hn-free-dagger" name="Free Dagger" hidden="false" collective="false" import="true" targetId="0d0b-ed37-d8b0-4cbf" type="selectionEntry"/>
+        <entryLink id="moc-hn-dagger" name="Dagger" hidden="false" collective="false" import="true" targetId="64e0-0bb6-542b-4beb" type="selectionEntry"/>
+        <entryLink id="moc-hn-hammer" name="Hammer" hidden="false" collective="false" import="true" targetId="cfcc-39fd-aeb4-876a" type="selectionEntry"/>
+        <entryLink id="moc-hn-axe" name="Axe" hidden="false" collective="false" import="true" targetId="5d01-06b9-3a86-73c9" type="selectionEntry"/>
+        <entryLink id="moc-hn-sword" name="Sword" hidden="false" collective="false" import="true" targetId="34fd-d6a3-50ee-ee06" type="selectionEntry"/>
+        <entryLink id="moc-hn-spear" name="Spear" hidden="false" collective="false" import="true" targetId="005e-e397-8108-f198" type="selectionEntry"/>
+        <entryLink id="moc-hn-morning" name="Morning Star" hidden="false" collective="false" import="true" targetId="d5f3-1906-da91-4e8f" type="selectionEntry"/>
+        <entryLink id="moc-hn-flail" name="Flail" hidden="false" collective="false" import="true" targetId="fea6-684b-02c4-6c62" type="selectionEntry"/>
+        <entryLink id="moc-hn-throwing" name="Throwing Axes" hidden="false" collective="false" import="true" targetId="23f5-19c3-5a6c-a8fb" type="selectionEntry"><modifiers><modifier type="set" field="name" value="Throwing Axes"/></modifiers></entryLink>
+        <entryLink id="moc-hn-shield" name="Shield" hidden="false" collective="false" import="true" targetId="74fb-cc90-1361-df26" type="selectionEntry"/>
+        <entryLink id="moc-hn-helmet" name="Helmet" hidden="false" collective="false" import="true" targetId="d0e5-ca89-5f0d-f5d2" type="selectionEntry"/>
+        <entryLink id="moc-hn-light" name="Light Armour" hidden="false" collective="false" import="true" targetId="3d2a-426a-c350-2a03" type="selectionEntry"/>
+      </entryLinks>
+    </selectionEntryGroup>
+
+    <selectionEntryGroup id="moc-special-skills" name="Marauder Special Skills" hidden="false" collective="false" import="true">
+      <selectionEntries>
+        <selectionEntry id="moc-skill-chosen" name="Chosen of Chaos" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-skill-chosen-max"/></constraints><rules><rule id="moc-skill-chosen-rule" name="Chosen of Chaos" hidden="false"><description>The Hero enters the rank of Chaos Warrior, uses the Warriors of Chaos maximum profile, and may use the Hero Equipment List.</description></rule></rules></selectionEntry>
+        <selectionEntry id="moc-skill-tattoo" name="Tattooed Body" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-skill-tattoo-max"/></constraints><rules><rule id="moc-skill-tattoo-rule" name="Tattooed Body" hidden="false"><description>Leader only. Eye of the Gods awards a Mark or creates a Spawn on 10+ instead of 12+ (11+ for a Norse leader).</description></rule></rules></selectionEntry>
+        <selectionEntry id="moc-skill-sweeping" name="Sweeping Blow" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-skill-sweeping-max"/></constraints><rules><rule id="moc-skill-sweeping-rule" name="Sweeping Blow" hidden="false"><description>Requires Strongman. When the Hero takes an enemy out of action with a double-handed weapon, immediately make another attack against a different model in base contact.</description></rule></rules></selectionEntry>
+        <selectionEntry id="moc-skill-mutant" name="Mutant" hidden="false" collective="true" import="true" type="upgrade"><rules><rule id="moc-skill-mutant-rule" name="Mutant" hidden="false"><description>The Hero may buy one mutation. A Hero with the Mark of Onogal may instead choose a Blessing of Nurgle other than Mark of Nurgle. This skill may be taken more than once.</description></rule></rules><entryLinks><entryLink id="moc-skill-mutations" name="Mutations" hidden="false" collective="false" import="true" targetId="5541-f5c4-85e0-b399" type="selectionEntryGroup"/></entryLinks></selectionEntry>
+        <selectionEntry id="moc-skill-heart" name="Heart of the Warrior" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-skill-heart-max"/></constraints><rules><rule id="moc-skill-heart-rule" name="Heart of the Warrior" hidden="false"><description>Leader only. The Hero may re-roll failed Rout tests and is immune to fear and all alone tests.</description></rule></rules></selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+
+    <selectionEntryGroup id="moc-marks" name="Marks of the Dark Gods" hidden="false" collective="false" import="true">
+      <constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-marks-max"/></constraints>
+      <rules><rule id="moc-mark-limit" name="Marks of the Dark Gods" hidden="false"><description>Except for Chaos Undivided, the warband may never include models with different Marks. Seers choose a Mark when hired. A leader receives one only through Eye of the Gods.</description></rule></rules>
+      <selectionEntries>
+        <selectionEntry id="moc-mark-undivided" name="Mark of Chaos Undivided" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-mark-undivided-max"/></constraints><rules><rule id="moc-mark-undivided-rule" name="Mark of Chaos Undivided" hidden="false"><description>Leader: warband members within the Leader radius may re-roll failed Leadership tests. Seer: the warband may include 0-3 Gors, which count toward its model maximum; re-roll The Lad&apos;s Got Talent results for them. A Seer uses Chaos Rituals.</description></rule></rules><entryLinks><entryLink id="moc-mark-chaos-rituals" name="Chaos Rituals" hidden="false" collective="false" import="true" targetId="61c7-8179-00b5-1772" type="selectionEntryGroup"/></entryLinks></selectionEntry>
+        <selectionEntry id="moc-mark-tchar" name="Mark of Tchar the Eagle" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-mark-tchar-max"/></constraints><rules><rule id="moc-mark-tchar-rule" name="Mark of Tchar the Eagle" hidden="false"><description>Leader: becomes a spellcaster, learns one random Tchar Ritual, and suffers -1 on Difficulty rolls unless already a wizard. Seer: starts with two Tchar Rituals, one chosen and one random.</description></rule></rules></selectionEntry>
+        <selectionEntry id="moc-mark-arkhar" name="Mark of Arkhar the Dog" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-mark-arkhar-max"/></constraints><rules><rule id="moc-mark-arkhar-rule" name="Mark of Arkhar the Dog" hidden="false"><description>Leader: is subject to frenzy; spells targeting him fail on 4+. Seer: becomes a Bloodfather, cannot cast spells, and may take Strength skills. Each time he takes an enemy out in hand-to-hand combat, pass a Leadership test to add +1 to WS, S, T or I until battle end; each may increase once.</description></rule></rules></selectionEntry>
+        <selectionEntry id="moc-mark-onogal" name="Mark of Onogal the Crow" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-mark-onogal-max"/></constraints><rules><rule id="moc-mark-onogal-rule" name="Mark of Onogal the Crow" hidden="false"><description>Leader: +1 Toughness, immune to poison, and may re-roll once on the Serious Injuries table. Seer: uses Onogal Rituals and is immune to poison.</description></rule></rules></selectionEntry>
+        <selectionEntry id="moc-mark-shornaal" name="Mark of Shornaal the Serpent" hidden="false" collective="false" import="true" type="upgrade"><constraints><constraint type="max" value="1" field="selections" scope="parent" shared="true" id="moc-mark-shornaal-max"/></constraints><rules><rule id="moc-mark-shornaal-rule" name="Mark of Shornaal the Serpent" hidden="false"><description>Leader: enemies not immune to psychology must pass a Leadership test on 3D6, discarding the lowest, before attacking him in close combat; on failure they are hit automatically, and once passed they need not retest that battle. Seer: uses Shornaal Rituals and, if not taken out, may brew unsellable Bugman&apos;s Ale instead of searching for a rare item.</description></rule></rules></selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+  </sharedSelectionEntryGroups>
+  <catalogueLinks><catalogueLink type="catalogue" name="data" id="moc-data-link" targetId="e020-c282-277b-b173" importRootEntries="true"/></catalogueLinks>
+</catalogue>
